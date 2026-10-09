@@ -1,5 +1,5 @@
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
-import { createServer } from './server'
+import { createServer } from './server.js'
 
 async function main() {
     if (!process.env.REMOTE_URL || !process.env.EMAIL_OR_USERNAME || !process.env.PASSWORD) {

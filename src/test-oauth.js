@@ -1,5 +1,5 @@
 import crypto from 'crypto'
-import { main as startHttpServer } from './http'
+import { main as startHttpServer } from './http.js'
 
 const base64url = (buf) => buf.toString('base64url')
 

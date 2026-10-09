@@ -2,9 +2,10 @@ import dotenv from 'dotenv'
 dotenv.config({ path: 'config.env' })
 
 import http from 'http'
+import { fileURLToPath } from 'url'
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js'
-import { createServer } from './server'
-import { register, authorizeGet, authorizePost, token, verify, verifyBasic, authorizationServerMetadata, protectedResourceMetadata } from './oauth'
+import { createServer } from './server.js'
+import { register, authorizeGet, authorizePost, token, verify, verifyBasic, authorizationServerMetadata, protectedResourceMetadata } from './oauth.js'
 
 const PORT = process.env.MCP_HTTP_PORT
 const HOST = process.env.MCP_HTTP_HOST
@@ -112,4 +113,4 @@ export const main = () => {
     return server
 }
 
-if (require.main === module) main()
+if (process.argv[1] === fileURLToPath(import.meta.url)) main()

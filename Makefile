@@ -1,8 +1,7 @@
 
 all:
-	npm start
+	yarn install
 
 clean:
-	npm run clean
 	rm -rf node_modules
 

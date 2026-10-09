@@ -1,6 +1,6 @@
 
 import { z } from 'zod'
-import instructions from './instructions';
+import instructions from './instructions.js';
 
 export const getInstructions = () => instructions;
 

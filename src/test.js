@@ -3,7 +3,7 @@
 //import { getToken } from './login.js'
 //import { listUsers } from './wsConnect.js'
 
-import { testEntryPoint } from './server';
+import { testEntryPoint } from './server.js';
 
 const run = async (name, args) => {
     try {

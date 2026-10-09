@@ -1,4 +1,4 @@
-import { getToken } from './login'
+import { getToken } from './login.js'
 
 export async function listConnections({ emailOrUsername, projectLocator, projectId, userId, connectionId } = {}, sessionToken) {
     const token = sessionToken || await getToken()

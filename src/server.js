@@ -4,8 +4,8 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { listConnections,
        callTools,
        inject,
-} from './wsConnect'
-import { getEntries, getInstructions, } from './entries';
+} from './wsConnect.js'
+import { getEntries, getInstructions, } from './entries.js';
 
 const fns = { listConnections, callTools, inject, };
 const entries = getEntries(fns);

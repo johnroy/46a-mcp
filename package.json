@@ -3,25 +3,14 @@
   "version": "1.0.0",
   "description": "46a MCP stdio connector",
   "main": "src/stdio.js",
+  "type": "module",
   "scripts": {
-    "build": "babel src -d dist",
-    "clean": "rm -rf ./dist",
-
-    "start": "babel-node src/stdio.js",
-    "start:http": "babel-node src/http.js",
-    "build": "babel src -d dist",
-    "serve": "node dist/stdio.js",
-    "serve:http": "node dist/http.js"
+    "start": "node src/http.js",
+    "start:stdio": "node src/stdio.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
     "dotenv": "^2.0.0",
     "zod": "^4.4.3"
-  },
-  "devDependencies": {
-    "babel-cli": "~6.18.0",
-    "babel-preset-es2017": "^6.16.0",
-    "babel-preset-node6": "~11.0.0",
-    "babel-preset-stage-3": "^6.17.0"
   }
 }
