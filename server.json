@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-06-18/server.schema.json",
+  "name": "io.github.johnroy/46a-mcp",
+  "description": "Live control of a 46a project open in a user's browser via MCP - read live app/DOM state and perform editor actions in real time.",
+  "status": "active",
+  "repository": {
+    "url": "https://github.com/johnroy/46a-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [],
+  "remotes": [
+    {
+      "transportType": "streamable-http",
+      "url": "https://46a.co/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Basic auth or OAuth bearer token",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

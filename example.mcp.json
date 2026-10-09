@@ -1,0 +1,23 @@
+{
+    "46a-mcp-http-oauth": {
+        "type": "streamable-http",
+        "url": "https://46a.co/mcp"
+    },
+    "46a-mcp-http-basic-auth": {
+        "type": "streamable-http",
+        "url": "https://46a.co/mcp",
+        "headers": {
+            "Authorization": "Basic <base64 of user:pass>"
+        }
+    },
+    "46a-mcp-stdio": {
+        "command": "node",
+        "args": ["dist/stdio.js"],
+        "cwd": "<optional current working directory>",
+        "env": {
+            "REMOTE_URL": "https://46a.co/mcp",
+            "EMAIL_OR_USERNAME": "<user>",
+            "PASSWORD": "<pass>"
+        }
+    }
+}
