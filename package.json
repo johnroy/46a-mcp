@@ -1,5 +1,6 @@
 {
   "name": "46a-mcp-server",
+  "license": "unlicensed",
   "version": "1.0.0",
   "description": "46a MCP stdio connector",
   "main": "src/stdio.js",
