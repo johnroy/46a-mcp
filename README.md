@@ -7,32 +7,36 @@ read live application/DOM state and perform editor actions in real time.
 
 ### As an HTTP target (standalone)
 
-1. Add the server URL as a custom connector (claude.ai: Settings → Connectors → Add
-   custom connector; Claude Code: `claude mcp add <name> <url>`).
+How to use the MCP connector, for hints ask claude "claude: show me where to configure mcpServers?"
 
-### Configure a local entry with OAuth
+1. Add the server URL as a custom connector (claude.ai: Settings → Connectors → Add
+   custom connector; Claude Code: `claude mcp add --transport http 46a-mcp https://46a.co/mcp`).
+
+### Configure local entry with OAuth
+Local claude MCP configuration to use oauth (default)
 
 ```json
 {
   "mcpServers": {
     "46a-mcp-http-oauth": {
       "type": "streamable-http",
-      "url": "http://127.0.0.1:3846"
+      "url": "https://46a.co/mcp"
     }
   }
 }
 ```
 
 ### Configure a local entry with basic auth
+Local claude MCP configuration to use basic auth instead of oauth.
 
 ```json
 {
   "mcpServers": {
     "46a-mcp-http-basic-auth": {
       "type": "streamable-http",
-      "url": "https://46a.co",
+      "url": "https://46a.co/mcp",
       "headers": {
-        "Authorization": "Basic ZnViYXI6MjIyMjIy"
+        "Authorization": "Basic <user:pass>"
       }
     }
   }
@@ -49,9 +53,9 @@ read live application/DOM state and perform editor actions in real time.
       "args": ["dist/stdio.js"],
       "cwd": "/Users/jroy/src/46a/mcp",
       "env": {
-        "REMOTE_URL": "",
-        "EMAIL_OR_USERNAME": "",
-        "PASSWORD": ""
+        "REMOTE_URL": "https://46a.co/mcp",
+        "EMAIL_OR_USERNAME": "<user>",
+        "PASSWORD": "<pass>"
       }
     }
   }
