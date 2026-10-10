@@ -81,6 +81,8 @@ B. Add entries (as above) to `.mcp.json` or other Claude config location, using
    either basic auth or OAuth (default), **or**
 C. Configure a local entry for the stdio-based process (see above)
 
+<img width="652" height="829" alt="Screenshot 2026-10-09 at 11 46 06 PM" src="https://github.com/user-attachments/assets/d5a3b693-1719-4944-a285-b55943dfd184" />
+
 ## Workflow
 
 1. `listConnections` → pick a live `connectionId`.
