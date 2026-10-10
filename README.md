@@ -5,7 +5,7 @@ read live application/DOM state and perform editor actions in real time.
 
 ## Installation
 
-### As an HTTP target (standalone)
+### As an HTTP (configured outside mcpServers)
 
 How to use the MCP connector, for hints ask claude "claude: show me where to configure mcpServers?"
 
