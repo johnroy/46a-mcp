@@ -12,7 +12,7 @@ How to use the MCP connector, for hints ask claude "claude: show me where to con
 1. Add the server URL as a custom connector (claude.ai: Settings → Connectors → Add
    custom connector; Claude Code: `claude mcp add --transport http 46a-mcp https://46a.co/mcp`).
 
-### Configure local entry with OAuth
+### Configure entry with OAuth
 Local claude MCP configuration to use oauth (default)
 
 ```json
@@ -26,7 +26,7 @@ Local claude MCP configuration to use oauth (default)
 }
 ```
 
-### Configure a local entry with basic auth
+### Configure a entry with basic auth
 Local claude MCP configuration to use basic auth instead of oauth.
 
 ```json
@@ -43,7 +43,7 @@ Local claude MCP configuration to use basic auth instead of oauth.
 }
 ```
 
-### Configure stdio process
+### Configure stdio process (you probably won't need this)
 
 ```json
 {
@@ -62,13 +62,13 @@ Local claude MCP configuration to use basic auth instead of oauth.
 }
 ```
 
-## Build stdio server
+## Build stdio server (or this)
 
 ```bash
 npm run build
 ```
 
-## Running
+## Running (or this)
 
 ```bash
 node src/http.js
