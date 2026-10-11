@@ -5,9 +5,10 @@ import { listConnections,
        callTools,
        inject,
 } from './wsConnect.js'
+import { callServerTools } from './serverTools.js'
 import { getEntries, getInstructions, } from './entries.js';
 
-const fns = { listConnections, callTools, inject, };
+const fns = { listConnections, callTools, inject, callServerTools, };
 const entries = getEntries(fns);
 
 // transport-agnostic: no transport is imported or connected here
@@ -21,6 +22,7 @@ export const createServer = (sessionToken) => {
         listConnections: (opts) => listConnections(opts, sessionToken),
         callTools: (toolCalls) => callTools(toolCalls, sessionToken),
         inject: (injectCall) => inject(injectCall, sessionToken),
+        callServerTools: (serverCall) => callServerTools(serverCall, sessionToken),
     }
     getEntries(boundFns).forEach(entry => server.registerTool(...entry))
 

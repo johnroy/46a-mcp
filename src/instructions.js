@@ -14,6 +14,10 @@ actions in real time. This is **not** a REST/data API (that's the 46a server API
   \`{ connectionId, request: { v:'j', code } }\`. \`code\` MUST be a single expression evaluating to a
   Promise (\`Promise.resolve(...)\` or an async IIFE).
 
+- **callServerTools** — the REST/data-plane counterpart of the client-side tools above: calls a
+  named 46a server REST endpoint directly (no live browser connection needed).
+  \`{ serverCall: { name, params } }\` — the endpoint catalog is listed in the tool's description.
+
 ## Workflow (required order)
 1. **listConnections** → 2. pick a *live* \`connectionId\` → 3. **callTools** / **inject**.
 You cannot skip step 1: \`connectionId\` is required, ephemeral, and orphans on page reload — re-list when in doubt.

@@ -1,6 +1,7 @@
 
 import { z } from 'zod'
 import instructions from './instructions.js';
+import { catalog, catalogDocs } from './serverToolsCatalog.js';
 
 export const getInstructions = () => instructions;
 
@@ -67,6 +68,30 @@ export const getEntries = (fns) => ([[
     },
     async ({ toolCalls }) => {
         const result = await fns.callTools(toolCalls);
+        return ({
+            content: [{ type: 'text', text: JSON.stringify(result, null, 4) }]
+        })
+    }
+], [
+    'callServerTools',
+    {
+        title: 'Call Server Tools',
+        description: `Calls a named 46a server REST endpoint and returns its data payload. The REST/data-plane counterpart of callTools (which drives a live browser connection). Endpoints:\n${catalogDocs}`,
+        inputSchema: z.object({
+            serverCall: z.object({
+                name: z.enum(Object.keys(catalog)).describe('Catalog name of the endpoint to call'),
+                params: z.record(z.any()).optional().describe('Flat params object: path params, query params, and body fields merged')
+            }).strict()
+        }).strict(),
+        annotations: {
+            readOnlyHint: false,
+            destructiveHint: true,
+            idempotentHint: false,
+            openWorldHint: false
+        }
+    },
+    async ({ serverCall }) => {
+        const result = await fns.callServerTools(serverCall);
         return ({
             content: [{ type: 'text', text: JSON.stringify(result, null, 4) }]
         })
