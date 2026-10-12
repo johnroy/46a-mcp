@@ -50,7 +50,7 @@ Local claude MCP configuration to use basic auth instead of oauth.
   "mcpServers": {
     "46a-mcp-stdio": {
       "command": "node",
-      "args": ["dist/stdio.js"],
+      "args": ["src/stdio.js"],
       "cwd": "/Users/jroy/src/46a/mcp",
       "env": {
         "REMOTE_URL": "https://46a.co/mcp",
@@ -60,12 +60,6 @@ Local claude MCP configuration to use basic auth instead of oauth.
     }
   }
 }
-```
-
-## Build stdio server (or this)
-
-```bash
-npm run build
 ```
 
 ## Running (or this)
